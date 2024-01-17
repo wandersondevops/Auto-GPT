@@ -40,7 +40,7 @@ class PromptConfig:
             exit(1)
 
         with open(prompt_settings_file, encoding="utf-8") as file:
-            config_params = yaml.load(file, Loader=yaml.FullLoader)
+            config_params = yaml.load(file, Loader=yaml.SafeLoader)
 
         self.constraints = config_params.get("constraints", [])
         self.resources = config_params.get("resources", [])
